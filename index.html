@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <meta name="A-frame breakout">
+
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+
+    <script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v1.4.2/dist/aframe-physics-system.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.9.0/dist/aframe-extras.min.js"></script>
+    <script src="components.js"></script>
+    
+ 
+   
+  </head>
+  <body>
+    <!-- Color scheme #16: http://blog.visme.co/website-color-schemes/ -->
+    
+    <!-- https://css-tricks.com/minecraft-webvr-html-using-frame/ -->
+    
+    <!-- reference for adding a lot of blocks: https://github.com/donmccurdy/aframe-extras/blob/master/examples/platforms/index.html -->
+    
+    <!-- throwing objects: https://codepen.io/heyscam/pen/QNRKMQ -->
+    
+    <!-- Moving stuff! https://codepen.io/mozvr/pen/RrxgwE -->
+    
+    <!-- Another physics resource: https://hacks.mozilla.org/2017/05/having-fun-with-physics-and-a-frame/ -->
+    
+    
+    <!-- Pushing stuff around: https://github.com/donmccurdy/aframe-extras/blob/master/examples/force-push/index.html -->
+    
+    <!-- Using Cannon.js: https://www.npmjs.com/package/aframe-physics-system -->
+    
+    <a-scene render-target-loaded rain-of-entities force-float="selector: [force-pushable]">
+      
+    <a-assets>   
+    
+      <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+      
+    </a-assets>
+      
+    
+   
+    
+      
+      <!-- Player -->
+      <a-entity camera="userHeight: 1.6"
+                universal-controls="movementEnabled: true"
+                kinematic-body>
+        <a-entity cursor
+                  position="0 0 -1"
+                  geometry="primitive: circle; radius: 0.02; segments: 4;"
+                  material="color: #FF4444; shader: flat"></a-entity>
+      </a-entity>
+      
+      <a-cylinder static-body id="ground" src="https://cdn.aframe.io/a-painter/images/floor.jpg" radius="32" height="0.1"></a-cylinder>
+      
+      <a-box dynamic-body="mass: 1" position="-2 2 -5" rotation="0 45 0" color="#B23900" animation="property: color; dir: alternate; dur: 1000;
+             easing: easeInSine; loop: true; to: #5F5"
+             
+             animation__scale="property: scale; dir: alternate; dur: 800;
+             easing: easeInSine; loop: true; to: 1.2 1 1.2"
+             animation__yoyo="property: position; dir: alternate; dur: 1000;
+              easing: easeInSine; loop: true; to: 0 2 -8"></a-box>
+      
+      <a-entity>
+        <a-sphere dynamic-body="mass: 1" position="1.5 10 -3" radius="1.4" color="#00B2A0">
+             <a-animation begin="click" attribute="position" 
+                   to="0 7 -10" dur="2000" fill="both"></a-animation>
+          </a-sphere>
+      ></a-entity>
+      
+      
+      
+      
+      <a-sky id="background" src="#skyTexture" theta-length="90" radius="30" color="#d1e8e2"></a-sky>
+      
+      <a-entity build-wall id="bricks"></a-entity>
+      
+      
+      
+    </a-scene>
+  </body>
+</html>
