@@ -25,7 +25,6 @@
     
     <!-- Another physics resource: https://hacks.mozilla.org/2017/05/having-fun-with-physics-and-a-frame/ -->
     
-    
     <!-- Pushing stuff around: https://github.com/donmccurdy/aframe-extras/blob/master/examples/force-push/index.html -->
     
     <!-- Using Cannon.js: https://www.npmjs.com/package/aframe-physics-system -->
@@ -35,12 +34,14 @@
     <a-assets>   
     
       <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+
+      <a-asset-item id="milktruck" src="assets/milktruck.gltf"></a-asset-item>
       
     </a-assets>
       
-    
-   
-    
+      <a-entity static-body gltf-model="#milktruck" position="-4 0 0"></a-entity>
+
+      
       
       <!-- Player -->
       <a-entity camera="userHeight: 1.6"
@@ -75,6 +76,8 @@
       <a-sky id="background" src="#skyTexture" theta-length="90" radius="30" color="#d1e8e2"></a-sky>
       
       <a-entity build-wall id="bricks"></a-entity>
+
+      
       
       
       
