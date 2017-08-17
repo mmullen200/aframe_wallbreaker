@@ -36,17 +36,20 @@
       <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
 
       <a-asset-item id="milktruck" src="assets/milktruck.gltf"></a-asset-item>
-       <a-asset-item id="spaceinvader" src="assets/space_invader.glb"></a-asset-item>
-       <a-asset-item id="spaceinvader2" src="assets/space_invader.obj"></a-asset-item>
+       <a-asset-item id="spaceinvader" src="assets/space_invader.obj"></a-asset-item>
        <a-asset-item id="spaceinvader-mtl" src="assets/space_invader.mtl"></a-asset-item>
+       <a-asset-item id="spaceinvader2" src="assets/space_invader2.obj"></a-asset-item>
+       <a-asset-item id="spaceinvader2-mtl" src="assets/space_invader2.mtl"></a-asset-item>
+       <a-asset-item id="spaceinvader3" src="assets/space_invader3.obj"></a-asset-item>
+       <a-asset-item id="spaceinvader3-mtl" src="assets/space_invader3.mtl"></a-asset-item>
       
     </a-assets>
       
       <a-entity static-body gltf-model="#milktruck" position="-4 0 0"></a-entity>
 
-      <a-entity static-body gltf-model="#spaceinvader" position="2 3 0"></a-entity>
-
-      <a-entity static-body obj-model="obj: #spaceinvader2; mtl: #spaceinvader-mtl" position="-10 3 0"></a-entity>
+      <a-entity static-body obj-model="obj: #spaceinvader; mtl: #spaceinvader-mtl" position="-10 3 0"></a-entity>
+      <a-entity static-body obj-model="obj: #spaceinvader2; mtl: #spaceinvader2-mtl" position="4 3 0"></a-entity>
+      <a-entity static-body obj-model="obj: #spaceinvader3; mtl: #spaceinvader3-mtl" position="8 3 0"></a-entity>
 
       
       
